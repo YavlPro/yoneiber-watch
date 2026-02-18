@@ -1,662 +1,1582 @@
-<!doctype html>
-<html lang="es" data-theme="dark">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>YavlAgro — El Agro de Táchira (Cyberpunk) 👑</title>
-  <meta name="description" content="Productos agrícolas futuristas de La Grita, Táchira: variedades, beneficios, temporada y contacto directo.">
-  <link rel="canonical" href="https://yavlpro.github.io/YavlAgro/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>YavlGold 3D Tactical Watch — Feliz Cumpleaños, Yoneiber</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="YavlAgro">
-  <meta property="og:description" content="Hortalizas y frutas de La Grita, Táchira. Beneficios, temporada y contacto.">
-  <meta property="og:url" content="https://yavlpro.github.io/YavlAgro/">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=1200&auto=format&fit=crop">
+:root {
+  --bg-deep: #0B0C0F;
+  --gold: #C8A752;
+  --gold-light: #E8D48B;
+  --gold-dark: #8B6F2A;
+  --tactical-green: #10B981;
+  --tactical-green-dim: rgba(16, 185, 129, 0.4);
+  --gray-lead: #6B7280;
+  --glass-highlight: rgba(255, 255, 255, 0.07);
+}
 
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 24 24'%3E%3Cpath fill='%23ffc107' d='M3 20q-.425 0-.712-.288T2 19v-5q0-.825.588-1.412T4 12h4q.825 0 1.413.588T10 14v5q0 .425-.288.713T9 20zM14 20q-.425 0-.712-.288T13 19v-7q0-.825.588-1.412T15 10h4q.825 0 1.413.588T21 12v7q0 .425-.288.713T20 20zM7 10q-.425 0-.712-.288T6 9V5q0-.825.588-1.412T8 3h8q.825 0 1.413.588T18 5v4q0 .425-.288.713T17 10z'/%3E%3C/svg%3E">
+html { font-size: 16px; scroll-behavior: smooth; }
 
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+body {
+  background: var(--bg-deep);
+  color: #E5E7EB;
+  font-family: 'Rajdhani', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 
-  <style>
-    /* ============================================= */
-    /* YAVLGOLD "OPUS CYBERPUNK" PALETTE */
-    /* ============================================= */
-    :root {
-        --cyber-gold: #ffc107;
-        --neon-green: #00ffcc;
-        --neon-pink: #ff00e5;
-        --neon-purple: #9d00ff;
-        --accent-red: #ff3366;
-        
-        --dark-background: #0a0a0a;
-        --card-background: #0f0f0f;
-        --border-dark: #2a2a2a;
-        --light-text: #e0e0e0;
-        --dim-text: #a0a0a0;
-        
-        --shadow:0 0 30px rgba(255, 193, 7, 0.2);
-        --transition-speed: 0.3s;
-    }
-    
-    /* Tema Claro (Stub) */
-    html[data-theme="light"] {
-        --dark-background: #f5f5f5;
-        --card-background: #fafafa;
-        --border-dark: #dddddd;
-        --light-text: #333333;
-        --dim-text: #666666;
-        --shadow:0 10px 25px rgba(0,0,0,.08);
-    }
-    
-    /* ============================================= */
-    /* RESET Y BASE CYBERPUNK */
-    /* ============================================= */
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      background:var(--dark-background);
-      color:var(--light-text);
-      /* FUENTES OPUS */
-      font-family: 'Share Tech Mono', monospace;
-      font-size:16px;
-      line-height:1.6;
-      position: relative;
-      overflow-x: hidden;
-    }
-    
-    /* FONDO ANIMADO Y SCANLINES (OPUS) */
-    .animated-background {
-        position: fixed; top: 0; left: 0;
-        width: 100%; height: 100%;
-        z-index: -2;
-        background: linear-gradient(45deg, var(--dark-background) 0%, #0a0a0a 25%, #0a0a0a 50%, #0a0a0a 75%, var(--dark-background) 100%);
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
-        opacity: 0.7;
-    }
-    @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
-    body::before {
-        content: ""; position: fixed; top: 0; left: 0;
-        width: 100%; height: 100%;
-        background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 193, 7, 0.02) 2px, rgba(255, 193, 7, 0.02) 4px);
-        z-index: -1;
-        pointer-events: none;
-    }
+/* ═══════ TACTICAL GRID BACKGROUND ═══════ */
+.tactical-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(200,167,82,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200,167,82,0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
 
-    .container{max-width:1100px;margin-inline:auto;padding:0 20px}
-    .section{padding:56px 0}
-    .section__head{margin-bottom:18px}
-    
-    h1,h2,h3{
-      margin:0 0 10px;
-      /* FUENTE OPUS */
-      font-family: 'Orbitron', sans-serif;
-      font-weight: 700;
-    }
-    
-    h1{
-      font-size:clamp(30px,5vw,44px);
-      line-height:1.15;
-      color: var(--cyber-gold);
-      text-shadow: 0 0 20px var(--cyber-gold), 0 0 40px rgba(255, 193, 7, 0.5);
-      animation: goldPulse 3s ease-in-out infinite;
-    }
-    @keyframes goldPulse {
-        0%, 100% { text-shadow: 0 0 20px var(--cyber-gold), 0 0 40px var(--cyber-gold); }
-        50% { text-shadow: 0 0 30px var(--cyber-gold), 0 0 60px rgba(255, 193, 7, 0.7); }
-    }
-    
-    h2{
-      font-size:clamp(22px,3.2vw,30px);
-      color: var(--neon-green);
-      text-shadow: 0 0 15px var(--neon-green);
-    }
-    h3{font-size:18px; color: var(--light-text);}
-    
-    .muted{color:var(--dim-text)}
-    
-    .ticks{list-style:none;padding:0;margin:14px 0 0}
-    .ticks li{padding-left:26px;position:relative;margin:8px 0}
-    .ticks li:before{content:"✓";position:absolute;left:0;color:var(--cyber-gold)}
-    
-    .skip{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:12px;top:12px;width:auto;height:auto;background:var(--card-background);color:var(--light-text);padding:8px 10px;border-radius:8px;z-index:999}
-    
-    .site-header{
-      position:sticky;top:0;z-index:50;
-      background:rgba(10, 10, 10, 0.9); /* OPUS BG */
-      backdrop-filter:blur(8px);
-      border-bottom:1px solid var(--border-dark);
-      box-shadow: 0 3px 20px rgba(255, 193, 7, 0.1);
-    }
-    
-    .nav{display:flex;align-items:center;justify-content:space-between;min-height:64px}
-    .brand{display:flex;align-items:center;gap:10px;color:var(--light-text);text-decoration:none;font-weight:700; font-family: 'Orbitron', sans-serif;}
-    .brand svg{display:block}
-    
-    .menu{display:flex;align-items:center;gap:14px}
-    .menu a{color:var(--dim-text);text-decoration:none;padding:8px 10px;border-radius:10px; transition: var(--transition-speed) ease;}
-    .menu a:hover{background:var(--card-background); color: var(--cyber-gold); text-shadow: 0 0 10px var(--cyber-gold);}
-    
-    .nav-toggle{display:none;flex-direction:column;gap:5px;background:transparent;border:0}
-    .nav-toggle .bar{width:24px;height:2px;background:var(--light-text);border-radius:2px}
-    
-    /* ============================================= */
-    /* BOTONES CYBERPUNK */
-    /* ============================================= */
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      background:var(--cyber-gold);
-      color: var(--dark-background);
-      border: 2px solid var(--cyber-gold);
-      border-radius: 8px; /* Bordes duros */
-      padding:10px 14px;
-      font-weight:700;
-      font-family: 'Orbitron', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      cursor:pointer;
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
-      transition: var(--transition-speed) ease;
-    }
-    .btn:hover{
-      background:var(--cyber-gold);
-      color: var(--dark-background);
-      box-shadow: 0 0 30px var(--cyber-gold);
-      transform: translateY(-2px);
-    }
-    
-    .btn.ghost{
-      background:transparent;
-      color:var(--light-text);
-      border: 2px solid var(--border-dark);
-      box-shadow:none;
-    }
-    .btn.ghost:hover{
-      background: var(--card-background);
-      color: var(--cyber-gold);
-      border-color: var(--cyber-gold);
-      box-shadow: 0 0 20px rgba(255, 193, 7, 0.2);
-    }
-    
-    .btn.whats{
-      background: #25D366;
-      border-color: #25D366;
-      color: #08361c;
-      box-shadow: 0 0 15px rgba(37, 211, 102, 0.3);
-    }
-    .btn.whats:hover{
-      background: #25D366;
-      color: #000;
-      box-shadow: 0 0 30px rgba(37, 211, 102, 0.5);
-    }
-    
-    /* ============================================= */
-    /* CHIPS Y TARJETAS */
-    /* ============================================= */
-    .chip{
-      border:1px solid var(--border-dark);
-      background:var(--card-background);
-      color:var(--dim-text);
-      padding:8px 12px;
-      border-radius: 8px; /* Bordes duros */
-      cursor:pointer;
-      font-family: 'Orbitron', sans-serif;
-      transition: var(--transition-speed) ease;
-    }
-    .chip:hover {
-      color: var(--light-text);
-      border-color: var(--dim-text);
-    }
-    .chip.is-active{
-      background: var(--cyber-gold);
-      color: var(--dark-background);
-      border-color: var(--cyber-gold);
-      box-shadow: 0 0 15px rgba(255, 193, 7, 0.3);
-    }
-    
-    .hero{position:relative;padding:64px 0 32px;overflow:hidden;border-bottom:1px solid var(--border-dark)}
-    .hero__inner{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
-    .hero__cta{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
-    .hero__badges{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0 0;padding:0;list-style:none;color:var(--dim-text);font-size:14px}
-    .hero__img img{
-      width:100%;height:auto;border-radius:18px;
-      border:1px solid var(--border-dark);
-      box-shadow:var(--shadow);
-    }
-    .hero__fade{position:absolute;inset:auto 0 0 0;height:120px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.25));pointer-events:none}
-    
-    .features__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-    .feature{
-      background:var(--card-background);
-      border:1px solid var(--border-dark);
-      border-radius:16px;padding:16px;
-      transition: var(--transition-speed) ease;
-    }
-    .feature:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-      border-color: var(--cyber-gold);
-    }
-    .feature .icon{font-size:22px;margin-bottom:6px; color: var(--cyber-gold); text-shadow: 0 0 10px var(--cyber-gold);}
-    
-    .filters{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 18px}
-    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
-    
-    .card{
-      background:var(--card-background);
-      border:1px solid var(--border-dark);
-      border-radius:16px;
-      overflow:hidden;display:flex;flex-direction:column;
-      transform:translateY(8px);opacity:0;transition:opacity .5s ease, transform .5s ease;
-    }
-    .card:hover {
-      box-shadow: var(--shadow);
-      border-color: var(--cyber-gold);
-    }
-    
-    .card.reveal{opacity:1;transform:none}
-    .card img{width:100%;height:170px;object-fit:cover;display:block}
-    .card .body{padding:14px}
-    
-    .badge{
-      display:inline-block;font-size:12px;
-      font-family: 'Orbitron', sans-serif;
-      color: var(--dark-background);
-      background: var(--cyber-gold);
-      padding:4px 8px;border-radius: 6px;margin-bottom:8px;
-    }
-    .meta{color:var(--dim-text);font-size:13px;margin-top:8px}
-    .card .actions{display:flex;gap:8px;margin-top:auto;padding:0 14px 14px}
-    
-    .about{display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:center}
-    .about__img{
-      width:100%;height:auto;border-radius:16px;
-      border:1px solid var(--border-dark);
-      object-fit:cover;
-      box-shadow: var(--shadow);
-    }
-    
-    /* ============================================= */
-    /* FORMULARIO CYBERPUNK */
-    /* ============================================= */
-    .form{display:grid;gap:12px;max-width:560px}
-    .form label{display:grid;gap:6px;font-weight:600; font-family: 'Orbitron', sans-serif;}
-    .form input,.form textarea{
-      padding:10px 12px;border-radius:8px;
-      border:1px solid var(--border-dark);
-      background:var(--card-background);
-      color:var(--light-text);
-      font-family: 'Share Tech Mono', monospace;
-      font-size: 1em;
-      transition: var(--transition-speed) ease;
-    }
-    .form input:focus,.form textarea:focus{
-      outline:none;
-      border-color:var(--neon-green);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
-    }
-    
-    .site-footer{
-      border-top:3px solid var(--cyber-gold); /* OPUS BORDER */
-      padding:18px 0;
-      margin-top: 40px;
-    }
-    .footer__inner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--dim-text)}
-    
-    .fab-whats{
-      position:fixed;right:16px;bottom:16px;
-      background:#25D366;color:white;border-radius:999px;
-      width:56px;height:56px;display:grid;place-items:center;
-      box-shadow:0 0 20px #25D366; /* GLOW */
-      z-index:40;
-      text-decoration:none;font-weight:700;font-size:22px;
-      transition: var(--transition-speed) ease;
-    }
-    .fab-whats:hover {
-      transform: scale(1.1) rotate(10deg);
-      box-shadow: 0 0 30px #25D366;
-    }
-    
-    @media (max-width: 900px){
-      .hero__inner{grid-template-columns:1fr}
-      .about{grid-template-columns:1fr}
-      .menu{
-        position:fixed;inset:64px 0 auto 0;
-        background:rgba(10, 10, 10, 0.95); /* OPUS BG */
-        backdrop-filter: blur(8px);
-        border-bottom:1px solid var(--border-dark);
-        padding:10px 20px;gap:10px;
-        transform:translateY(-120%);transition:transform .3s ease;
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .menu .btn { width: 100%; justify-content: center; }
-      .menu.open{transform:none}
-      .nav-toggle{display:flex}
-    }
-    @media (prefers-reduced-motion: reduce){
-      *{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important}
-    }
-  </style>
+.tactical-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(200,167,82,0.06) 0%, transparent 60%);
+}
+
+/* ═══════ PARTICLES ═══════ */
+.particles-container {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0;
+  animation: particleFade linear infinite;
+}
+
+@keyframes particleFade {
+  0% { opacity: 0; transform: translateY(0) scale(0.5); }
+  20% { opacity: 0.6; }
+  80% { opacity: 0.3; }
+  100% { opacity: 0; transform: translateY(-120vh) scale(0); }
+}
+
+/* ═══════ TOP HUD ═══════ */
+.hud-top {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(200,167,82,0.1);
+}
+
+.hud-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.hud-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+}
+
+.hud-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--tactical-green);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+  box-shadow: 0 0 8px var(--tactical-green);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ═══════ MAIN CONTENT ═══════ */
+.main-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  width: 100%;
+  max-width: 750px;
+}
+
+/* ═══════ TITLE SECTION ═══════ */
+.title-section {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.codename {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  margin-bottom: 6px;
+  opacity: 0;
+  animation: fadeSlideIn 1s 0.5s forwards;
+}
+
+.recipient-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.4rem, 5vw, 2.2rem);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none;
+  filter: drop-shadow(0 0 20px rgba(200,167,82,0.3));
+  opacity: 0;
+  animation: fadeSlideIn 1s 0.8s forwards;
+}
+
+.subtitle-line {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-top: 6px;
+  opacity: 0;
+  animation: fadeSlideIn 1s 1s forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════ 3D WATCH CONTAINER ═══════ */
+.watch-scene {
+  perspective: 900px;
+  margin: 25px 0 30px;
+  opacity: 0;
+  animation: fadeSlideIn 1.2s 1.3s forwards;
+}
+
+.watch-body {
+  position: relative;
+  width: clamp(260px, 70vw, 340px);
+  height: clamp(260px, 70vw, 340px);
+  transform-style: preserve-3d;
+  animation: watchFloat 6s ease-in-out infinite;
+}
+
+@keyframes watchFloat {
+  0%, 100% { transform: rotateX(8deg) rotateY(-5deg) translateY(0px); }
+  25% { transform: rotateX(5deg) rotateY(3deg) translateY(-8px); }
+  50% { transform: rotateX(-3deg) rotateY(6deg) translateY(-4px); }
+  75% { transform: rotateX(4deg) rotateY(-4deg) translateY(-10px); }
+}
+
+.bezel-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    #3a3228, #6b5a3e, #C8A752, #E8D48B, #C8A752,
+    #6b5a3e, #3a3228, #2a2218, #3a3228, #6b5a3e,
+    #C8A752, #E8D48B, #C8A752, #6b5a3e, #3a3228
+  );
+  box-shadow:
+    0 0 0 3px #1a1610,
+    0 8px 30px rgba(0,0,0,0.8),
+    0 2px 15px rgba(200,167,82,0.15),
+    inset 0 1px 2px rgba(255,255,255,0.2),
+    inset 0 -1px 2px rgba(0,0,0,0.5),
+    0 20px 60px rgba(0,0,0,0.5);
+  transform: translateZ(-10px);
+}
+
+.bezel-ticks {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  transform: translateZ(-9px);
+}
+
+.bezel-tick {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: rgba(0,0,0,0.5);
+  top: 4px;
+  left: 50%;
+  transform-origin: 50% calc(var(--watch-r) - 4px);
+}
+
+.bezel-inner {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #1E1E24, #12131A);
+  box-shadow:
+    inset 0 2px 8px rgba(0,0,0,0.8),
+    inset 0 -1px 3px rgba(200,167,82,0.1),
+    0 0 0 1px rgba(200,167,82,0.2);
+  transform: translateZ(-5px);
+}
+
+.watch-face {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 40% 35%, #141820, #0B0D12 50%, #080A0E);
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.6),
+    inset 0 0 80px rgba(0,0,0,0.3);
+  transform: translateZ(0px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.dial-markers { position: absolute; inset: 0; }
+
+.dial-mark {
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  width: 1.5px;
+  transform-origin: 50% calc(50% - 8px + var(--face-r));
+}
+
+.dial-mark.major {
+  height: 14px;
+  background: var(--gold);
+  opacity: 0.8;
+  width: 2px;
+  box-shadow: 0 0 4px rgba(200,167,82,0.4);
+}
+
+.dial-mark.minor {
+  height: 7px;
+  background: rgba(200,167,82,0.25);
+}
+
+.inner-ring {
+  position: absolute;
+  inset: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(200,167,82,0.07);
+}
+
+.inner-ring-2 {
+  position: absolute;
+  inset: 55px;
+  border-radius: 50%;
+  border: 1px dashed rgba(200,167,82,0.05);
+}
+
+.clock-display {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.clock-time {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(2rem, 8vw, 2.8rem);
+  letter-spacing: 3px;
+  color: var(--tactical-green);
+  text-shadow:
+    0 0 20px rgba(16,185,129,0.5),
+    0 0 40px rgba(16,185,129,0.2),
+    0 0 2px rgba(16,185,129,0.8);
+  line-height: 1;
+}
+
+.clock-seconds {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.7rem, 2.5vw, 0.9rem);
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-top: 2px;
+  opacity: 0.8;
+}
+
+.clock-date-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.clock-date {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: clamp(0.55rem, 2vw, 0.7rem);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(200,167,82,0.6);
+}
+
+.date-divider {
+  width: 3px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.clock-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.5rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(200,167,82,0.3);
+  margin-top: 10px;
+}
+
+.glass-reflection {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.03) 30%,
+    transparent 50%,
+    transparent 100%
+  );
+  transform: translateZ(2px);
+  pointer-events: none;
+}
+
+.glass-reflection::after {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 20%;
+  width: 35%;
+  height: 20%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.06), transparent);
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+
+.watch-crown {
+  position: absolute;
+  right: -14px;
+  top: 50%;
+  transform: translateY(-50%) translateZ(-3px);
+  width: 14px;
+  height: 30px;
+  background: linear-gradient(180deg, #C8A752, #8B6F2A, #6b5a3e, #C8A752);
+  border-radius: 0 4px 4px 0;
+  box-shadow:
+    2px 2px 8px rgba(0,0,0,0.6),
+    inset -1px 0 2px rgba(255,255,255,0.15);
+}
+
+.watch-crown::before {
+  content: '';
+  position: absolute;
+  inset: 3px 2px;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.2) 0px,
+    rgba(0,0,0,0.2) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  border-radius: 0 2px 2px 0;
+}
+
+.watch-lug {
+  position: absolute;
+  width: 24px;
+  height: 40px;
+  background: linear-gradient(90deg, #6b5a3e, #C8A752, #6b5a3e);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.lug-top-left { top: -20px; left: 30px; border-radius: 6px 6px 0 0; transform: rotate(-20deg) translateZ(-8px); }
+.lug-top-right { top: -20px; right: 30px; border-radius: 6px 6px 0 0; transform: rotate(20deg) translateZ(-8px); }
+.lug-bottom-left { bottom: -20px; left: 30px; border-radius: 0 0 6px 6px; transform: rotate(20deg) translateZ(-8px); }
+.lug-bottom-right { bottom: -20px; right: 30px; border-radius: 0 0 6px 6px; transform: rotate(-20deg) translateZ(-8px); }
+
+.strap-top, .strap-bottom {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateZ(-12px);
+  width: 70px;
+  height: 50px;
+}
+
+.strap-top {
+  top: -45px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(180deg, #151510, #1a1a16);
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.6);
+}
+
+.strap-bottom {
+  bottom: -45px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(180deg, #1a1a16, #151510);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.scan-line {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  overflow: hidden;
+  pointer-events: none;
+  transform: translateZ(1px);
+}
+
+.scan-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(16,185,129,0.15), transparent);
+  animation: scanMove 4s linear infinite;
+}
+
+@keyframes scanMove {
+  0% { top: 10%; }
+  100% { top: 90%; }
+}
+
+/* ═══════ STATUS BAR ═══════ */
+.status-bar {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+  opacity: 0;
+  animation: fadeSlideIn 1s 1.8s forwards;
+}
+
+.status-item { text-align: center; }
+
+.status-value {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--gold);
+  letter-spacing: 1px;
+}
+
+.status-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-top: 2px;
+}
+
+/* ═══════ PHRASES SECTION ═══════ */
+.phrases-section {
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fadeSlideIn 1s 2.2s forwards;
+}
+
+.phrase-display { position: relative; }
+
+.phrase-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1rem, 3.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--gold-light);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+  transform: translateY(10px);
+}
+
+.phrase-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.phrase-number {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  color: var(--tactical-green);
+  opacity: 0.5;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.phrase-decorator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.deco-line {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+}
+
+.deco-diamond {
+  width: 5px;
+  height: 5px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  opacity: 0.5;
+}
+
+/* ═══════ BIRTHDAY BADGE ═══════ */
+.birthday-badge {
+  margin-top: 20px;
+  padding: 10px 25px;
+  border: 1px solid rgba(200,167,82,0.2);
+  border-radius: 4px;
+  background: rgba(200,167,82,0.03);
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideIn 1s 2.8s forwards;
+}
+
+.badge-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+}
+
+.badge-date {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-top: 2px;
+}
+
+/* ═══════════════════════════════════════════════ */
+/* ═══════ 3D LETTER / CARTA 3D ═══════════════ */
+/* ═══════════════════════════════════════════════ */
+
+.letter-section {
+  width: 100%;
+  max-width: 620px;
+  margin: 50px auto 30px;
+  opacity: 0;
+  animation: fadeSlideIn 1.2s 3.2s forwards;
+}
+
+.letter-section-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.letter-section-title .section-tag {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.65rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  opacity: 0.6;
+}
+
+.letter-section-title .section-heading {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(0.9rem, 3vw, 1.2rem);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+.letter-scene {
+  perspective: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.letter-card {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  min-height: 500px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  transition: transform 0.9s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.letter-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.letter-card:hover:not(.flipped) {
+  transform: rotateY(-8deg) rotateX(3deg);
+}
+
+.letter-card.flipped:hover {
+  transform: rotateY(172deg) rotateX(3deg);
+}
+
+.letter-front, .letter-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: clamp(24px, 5vw, 40px);
+  overflow: hidden;
+}
+
+/* ═══ FRONT FACE ═══ */
+.letter-front {
+  background: linear-gradient(160deg, #131518 0%, #0e0f13 40%, #0a0b0e 100%);
+  border: 1px solid rgba(200,167,82,0.15);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.7),
+    0 8px 30px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(200,167,82,0.1),
+    0 0 60px rgba(200,167,82,0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.letter-front::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(200,167,82,0.06);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.letter-front::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(200,167,82,0.02) 60deg, transparent 120deg);
+  animation: rotateFrontGlow 12s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateFrontGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.front-seal {
+  position: relative;
+  z-index: 2;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, rgba(200,167,82,0.08), transparent);
+  box-shadow: 0 0 30px rgba(200,167,82,0.1), inset 0 0 20px rgba(200,167,82,0.05);
+}
+
+.front-seal svg {
+  width: 40px;
+  height: 40px;
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 6px rgba(200,167,82,0.4));
+}
+
+.front-title {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.front-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  color: var(--gold-light);
+  line-height: 1.3;
+}
+
+.front-title p {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-top: 8px;
+}
+
+.front-cta {
+  position: relative;
+  z-index: 2;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  opacity: 0.7;
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+.front-cta svg {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: var(--tactical-green);
+  stroke-width: 2;
+  animation: arrowBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes arrowBounce {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+.front-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-color: var(--gold);
+  border-style: solid;
+  opacity: 0.3;
+  z-index: 2;
+}
+
+.front-corner.tl { top: 16px; left: 16px; border-width: 1px 0 0 1px; }
+.front-corner.tr { top: 16px; right: 16px; border-width: 1px 1px 0 0; }
+.front-corner.bl { bottom: 16px; left: 16px; border-width: 0 0 1px 1px; }
+.front-corner.br { bottom: 16px; right: 16px; border-width: 0 1px 1px 0; }
+
+/* ═══ BACK FACE ═══ */
+.letter-back {
+  background: linear-gradient(160deg, #14160f 0%, #0f100b 40%, #0a0b08 100%);
+  border: 1px solid rgba(200,167,82,0.12);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,0.7),
+    0 8px 30px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(200,167,82,0.08);
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.letter-back::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(200,167,82,0.04);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.letter-header {
+  text-align: center;
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(200,167,82,0.08);
+  position: relative;
+}
+
+.letter-header .lh-to {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  opacity: 0.6;
+}
+
+.letter-header .lh-name {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  letter-spacing: 4px;
+  color: var(--gold);
+  margin: 4px 0;
+}
+
+.letter-header .lh-sub {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+}
+
+.letter-body {
+  flex: 1;
+}
+
+.letter-body p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
+  line-height: 1.85;
+  color: #d4cfc5;
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.letter-body p .highlight {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.letter-body p .green-accent {
+  color: var(--tactical-green);
+  font-weight: 600;
+}
+
+.letter-signature {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(200,167,82,0.08);
+  text-align: right;
+}
+
+.letter-signature .sig-line {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+  color: var(--gold);
+  line-height: 1.4;
+}
+
+.letter-signature .sig-role {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-top: 6px;
+}
+
+.letter-signature .sig-origin {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  opacity: 0.5;
+  margin-top: 4px;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 14px;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 500;
+  font-size: 0.65rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--tactical-green);
+  opacity: 0.6;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.back-btn:hover { opacity: 1; }
+
+.back-btn svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: var(--tactical-green);
+  stroke-width: 2;
+}
+
+/* ═══════ COUNTDOWN SECTION ═══════ */
+.countdown-section {
+  width: 100%;
+  max-width: 520px;
+  margin: 35px auto 10px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeSlideIn 1s 3.6s forwards;
+}
+
+.countdown-label {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 300;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-bottom: 12px;
+}
+
+.countdown-grid {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.cd-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.cd-value {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: var(--gold);
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(200,167,82,0.3);
+}
+
+.cd-unit {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  margin-top: 2px;
+}
+
+/* ═══════ FOOTER ═══════ */
+footer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid rgba(200,167,82,0.08);
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 400;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gray-lead);
+  opacity: 0.5;
+}
+
+.footer-text span {
+  color: var(--gold);
+  opacity: 1;
+}
+
+/* ═══════ SCANLINES OVERLAY ═══════ */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0,0,0,0.03) 2px,
+    rgba(0,0,0,0.03) 4px
+  );
+  pointer-events: none;
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6));
+  pointer-events: none;
+}
+
+/* ═══════ SECOND HAND ═══════ */
+.second-hand-container {
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  transform: translateZ(1px);
+  pointer-events: none;
+}
+
+.second-hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 1.5px;
+  height: 40%;
+  background: linear-gradient(to top, var(--tactical-green), rgba(16,185,129,0.3));
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(0deg);
+  box-shadow: 0 0 6px rgba(16,185,129,0.4);
+  transition: none;
+}
+
+.second-hand::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  background: var(--tactical-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--tactical-green);
+}
+
+.center-pivot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, var(--gold-light), var(--gold-dark));
+  border-radius: 50%;
+  z-index: 5;
+  box-shadow: 0 0 6px rgba(200,167,82,0.5);
+}
+
+.heartbeat-bar {
+  position: absolute;
+  bottom: 28%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 2px;
+  align-items: flex-end;
+  height: 14px;
+  z-index: 2;
+}
+
+.hb-bar {
+  width: 2px;
+  background: var(--tactical-green);
+  opacity: 0.4;
+  animation: hbPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes hbPulse {
+  0%, 100% { height: 3px; opacity: 0.3; }
+  50% { height: 12px; opacity: 0.7; }
+}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 480px) {
+  .watch-scene { perspective: 700px; }
+  .status-bar { gap: 20px; }
+  .hud-top { padding: 12px 14px; }
+  .letter-front, .letter-back { padding: 20px; }
+  .letter-card { min-height: 460px; }
+}
+
+@media (min-width: 768px) {
+  .main-content { padding: 30px; }
+}
+
+/* ═══════ CONFETTI (Subtle gold) ═══════ */
+.confetti-piece {
+  position: fixed;
+  z-index: 10;
+  width: 6px;
+  height: 10px;
+  opacity: 0;
+  pointer-events: none;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0% { opacity: 1; transform: translateY(-20px) rotateZ(0deg) rotateX(0deg); }
+  25% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(100vh) rotateZ(720deg) rotateX(360deg); }
+}
+</style>
 </head>
 <body>
-  
-  <div class="animated-background"></div>
 
-  <a class="skip" href="#productos">Saltar al contenido</a>
+<!-- Background layers -->
+<div class="tactical-grid"></div>
+<div class="particles-container" id="particles"></div>
+<div class="scanlines"></div>
+<div class="vignette"></div>
 
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Ir al inicio">
-        <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true"><path fill="var(--cyber-gold)" d="M3 20q-.425 0-.712-.288T2 19v-5q0-.825.588-1.412T4 12h4q.825 0 1.413.588T10 14v5q0 .425-.288.713T9 20zM14 20q-.425 0-.712-.288T13 19v-7q0-.825.588-1.412T15 10h4q.825 0 1.413.588T21 12v7q0 .425-.288.713T20 20zM7 10q-.425 0-.712-.288T6 9V5q0-.825.588-1.412T8 3h8q.825 0 1.413.588T18 5v4q0 .425-.288.713T17 10z"/></svg>
-        <span>YavlAgro</span>
-      </a>
+<!-- HUD Top Bar -->
+<div class="hud-top">
+  <div class="hud-label">YavlGold Prestige v9.9</div>
+  <div class="hud-status">
+    <div class="hud-dot"></div>
+    <span>Operativo</span>
+  </div>
+</div>
 
-      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-        <span class="bar" aria-hidden="true"></span>
-      </button>
+<!-- Main Content -->
+<div class="main-content">
 
-      <nav class="menu" aria-label="Principal">
-        <a href="#productos">Productos</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-        <button id="themeToggle" class="btn ghost" aria-label="Cambiar tema">🌙</button>
-        <a class="btn whats" href="https://wa.me/584247394025" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">WhatsApp</a>
-      </nav>
-    </div>
-  </header>
+  <!-- Title -->
+  <div class="title-section">
+    <div class="codename">// Cadete de Honor //</div>
+    <div class="recipient-name">Yoneiber</div>
+    <div class="subtitle-line">Misión: 19 de Febrero 2026 — Cumpleaños Táctico Nro. 12</div>
+  </div>
 
-  <main id="top">
-    <section class="hero">
-      <div class="container hero__inner">
-        <div class="hero__text">
-          <h1>Del surco a tu mesa</h1>
-          <p class="muted" style="font-size: 1.1em; color: var(--light-text);">Hortalizas y frutas de La Grita, Táchira. Frescura, sabor y tradición agrícola en la era digital.</p>
-          <div class="hero__cta">
-            <a class="btn" href="#productos">Ver productos</a>
-            <a class="btn ghost" href="https://wa.me/584247394025" target="_blank" rel="noopener">Pedir por WhatsApp</a>
+  <!-- 3D Watch -->
+  <div class="watch-scene">
+    <div class="watch-body">
+      <div class="strap-top"></div>
+      <div class="strap-bottom"></div>
+      <div class="lug-top-left watch-lug"></div>
+      <div class="lug-top-right watch-lug"></div>
+      <div class="lug-bottom-left watch-lug"></div>
+      <div class="lug-bottom-right watch-lug"></div>
+      <div class="watch-crown"></div>
+      <div class="bezel-outer">
+        <div class="bezel-ticks" id="bezelTicks"></div>
+      </div>
+      <div class="bezel-inner"></div>
+      <div class="watch-face">
+        <div class="dial-markers" id="dialMarkers"></div>
+        <div class="inner-ring"></div>
+        <div class="inner-ring-2"></div>
+        <div class="clock-display">
+          <div class="clock-time" id="clockTime">00:00</div>
+          <div class="clock-seconds" id="clockSeconds">: 00</div>
+          <div class="clock-date-row">
+            <div class="clock-date" id="clockDate">--/--/----</div>
+            <div class="date-divider"></div>
+            <div class="clock-date" id="clockDay">---</div>
           </div>
-          <ul class="hero__badges">
-            <li>✅ Productores locales</li>
-            <li>🚚 Envíos regionales</li>
-            <li>🌱 Cosecha responsable</li>
-          </ul>
+          <div class="clock-label">Hora Militar</div>
         </div>
-        <picture class="hero__img">
-          <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?q=80&w=900&auto=format&fit=crop" alt="Canastas con hortalizas frescas de La Grita" width="640" height="420" loading="eager">
-        </picture>
-      </div>
-      <div class="hero__fade" aria-hidden="true"></div>
-    </section>
-
-    <section id="productos" class="section container">
-      <header class="section__head">
-        <h2>Productos</h2>
-        <p class="muted">Explora por categoría y descubre beneficios, temporada y usos.</p>
-      </header>
-
-      <div class="filters" role="tablist" aria-label="Filtrar productos">
-        <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
-        <button class="chip" data-filter="hortaliza" role="tab" aria-selected="false">Hortalizas</button>
-        <button class="chip" data-filter="fruta" role="tab" aria-selected="false">Frutas</button>
-      </div>
-
-      <div id="grid" class="grid" aria-live="polite"></div>
-    </section>
-
-    <section class="features container section">
-      <div class="features__grid">
-        <article class="feature">
-          <div class="icon">🥕</div>
-          <h3>Frescura garantizada</h3>
-          <p class="muted">Cosecha cercana para máxima calidad y sabor.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">📦</div>
-          <h3>Presentaciones a medida</h3>
-          <p class="muted">Desde cajas mixtas hasta pedidos por rubro.</p>
-        </article>
-        <article class="feature">
-          <div class="icon">🤝</div>
-          <h3>Trato directo</h3>
-          <p class="muted">Conecta con productores y apoya lo local.</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="sobre-mi" class="section container">
-      <header class="section__head">
-        <h2>Sobre mí</h2>
-      </header>
-      <div class="about">
-        <img class="about__img" src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?q=80&w=700&auto=format&fit=crop" alt="Yerikson en zona de cultivo" width="320" height="320" loading="lazy">
-        <div class="about__text">
-          <p style="font-size: 1.1em; color: var(--light-text);">Hola, soy Yerikson. Promuevo los productos de La Grita conectando a productores con consumidores y comercios. Mi meta: ofrecer frescura real y precios justos para todos.</p>
-          <ul class="ticks">
-            <li>+5 años acompañando a productores</li>
-            <li>Relaciones directas con fincas locales</li>
-            <li>Calidad y sazón tachirense</li>
-          </ul>
+        <div class="heartbeat-bar">
+          <div class="hb-bar" style="animation-delay: 0s; height: 4px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.15s; height: 8px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.3s; height: 12px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.45s; height: 6px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.6s; height: 10px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.75s; height: 3px;"></div>
+          <div class="hb-bar" style="animation-delay: 0.9s; height: 7px;"></div>
         </div>
       </div>
-    </section>
+      <div class="second-hand-container">
+        <div class="second-hand" id="secondHand"></div>
+        <div class="center-pivot"></div>
+      </div>
+      <div class="glass-reflection"></div>
+      <div class="scan-line"></div>
+    </div>
+  </div>
 
-    <section id="contacto" class="section container">
-      <header class="section__head">
-        <h2>Contacto</h2>
-        <p class="muted">¿Tienes un pedido o consulta? Escríbeme y te respondo a la brevedad.</p>
-      </header>
-      <form class="form" action="https://formspree.io/f/tu_codigo" method="POST">
-        <label>
-          Nombre
-          <input name="nombre" autocomplete="name" required>
-        </label>
-        <label>
-          Correo
-          <input type="email" name="email" autocomplete="email" required>
-        </label>
-        <label>
-          Mensaje
-          <textarea name="mensaje" rows="4" required></textarea>
-        </label>
-        <button class="btn" type="submit">Enviar</button>
-        <p class="muted">O escríbeme directo por <a href="https://wa.me/584247394025" target="_blank" rel="noopener">WhatsApp</a>.</p>
-      </form>
-    </section>
-  </main>
+  <!-- Status Bar -->
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="status-value">19</div>
+      <div class="status-label">Febrero</div>
+    </div>
+    <div class="status-item">
+      <div class="status-value">12</div>
+      <div class="status-label">Años</div>
+    </div>
+    <div class="status-item">
+      <div class="status-value">100%</div>
+      <div class="status-label">Disciplina</div>
+    </div>
+  </div>
 
-  <footer class="site-footer">
-    <div class="container footer__inner">
-      <small>La Grita, Táchira • Última actualización: <time datetime="2025-09-28">28/09/2025</time></small>
-      <small>© <span id="year"></span> YavlAgro</small> </div>
-  </footer>
+  <!-- Phrases -->
+  <div class="phrases-section">
+    <div class="phrase-display">
+      <div class="phrase-number" id="phraseNumber">Transmisión I / III</div>
+      <div class="phrase-text" id="phraseText"></div>
+      <div class="phrase-decorator">
+        <div class="deco-line"></div>
+        <div class="deco-diamond"></div>
+        <div class="deco-line"></div>
+      </div>
+    </div>
+  </div>
 
-  <a class="fab-whats" aria-label="Abrir WhatsApp" href="https://wa.me/584247394025" target="_blank" rel="noopener">✆</a>
+  <!-- Birthday Badge -->
+  <div class="birthday-badge">
+    <div class="badge-label">Felicitación Oficial Activada</div>
+    <div class="badge-date">19 · FEB · MMXXVI</div>
+  </div>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "YavlAgro",
-    "url": "https://yavlpro.github.io/YavlAgro/",
-    "logo": "https://yavlpro.github.io/YavlAgro/logo.png"
+  <!-- ═══════════════════════════════════════ -->
+  <!-- ═══════ 3D LETTER / CARTA 3D ═══════ -->
+  <!-- ═══════════════════════════════════════ -->
+  <div class="letter-section">
+    <div class="letter-section-title">
+      <div class="section-tag">// Comunicado Clasificado //</div>
+      <div class="section-heading">Carta para el Cadete</div>
+    </div>
+
+    <div class="letter-scene">
+      <div class="letter-card" id="letterCard">
+
+        <!-- FRONT -->
+        <div class="letter-front">
+          <div class="front-corner tl"></div>
+          <div class="front-corner tr"></div>
+          <div class="front-corner bl"></div>
+          <div class="front-corner br"></div>
+
+          <div class="front-seal">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            </svg>
+          </div>
+
+          <div class="front-title">
+            <h2>Para ti, Yoneiber</h2>
+            <p>Mensaje de tu Tío Yerikson</p>
+          </div>
+
+          <div class="front-cta">
+            <span>Toca para abrir</span>
+            <svg viewBox="0 0 24 24">
+              <polyline points="9 18 15 12 9 6"/>
+            </svg>
+          </div>
+        </div>
+
+        <!-- BACK -->
+        <div class="letter-back">
+          <div class="letter-header">
+            <div class="lh-to">Para mi sobrino</div>
+            <div class="lh-name">Yoneiber</div>
+            <div class="lh-sub">Cadete del Liceo Militar Jáuregui · 12 años</div>
+          </div>
+
+          <div class="letter-body">
+            <p>
+              Mi querido sobrino, hoy que cumples <span class="highlight">12 años</span>, quiero que sepas algo que llevo guardado en el pecho desde el día que naciste: tú viniste al mundo con una luz distinta, una fuerza que no se aprende en ningún cuartel, porque la traes en la sangre.
+            </p>
+            <p>
+              Vienes de <span class="highlight">Santa Ana del Valle</span>, de esa tierra bendita de La Grita donde la gente madruga no por obligación, sino por dignidad. Donde tu papá <span class="highlight">Nelson Marino</span> se levanta antes que el sol para trabajar la tierra con las manos, con el mismo valor con el que tú te levantas cada mañana en el <span class="green-accent">Liceo Militar Jáuregui</span> a dar lo mejor de ti. Esa fuerza, mijo, no te la enseñó nadie — la heredaste.
+            </p>
+            <p>
+              Y tu mamá, <span class="highlight">Yeli Varela</span>, esa mujer que sostiene todo con amor silencioso, que cocina, que cuida, que reza por ti cada noche sin que tú lo sepas... ella es la prueba de que detrás de todo guerrero hay alguien que lo ama sin condiciones. Nunca olvides eso.
+            </p>
+            <p>
+              Somos gente del campo, sobrino. Gente de manos curtidas y corazón noble. Y tú estás allá, vistiendo ese uniforme, demostrando que de nuestra aldea también salen hombres de honor. Cada vez que te pongas firme, acuérdate que <span class="highlight">toda Santa Ana</span> se pone firme contigo.
+            </p>
+            <p>
+              No tengas miedo de los días difíciles. Los días difíciles son los que fabrican a los hombres que después la gente admira. Y tú, con apenas 12 años, ya estás caminando por ese sendero.
+            </p>
+            <p>
+              <span class="highlight">Feliz cumpleaños, cadete.</span> Que este nuevo año te traiga más fuerza, más sabiduría y la certeza de que tu familia te ama con el alma entera. Estamos orgullosos de ti.
+            </p>
+          </div>
+
+          <div class="letter-signature">
+            <div class="sig-line">Con todo el cariño del mundo,</div>
+            <div class="sig-line" style="margin-top:4px;">Tu Tío Yerikson</div>
+            <div class="sig-role">Sistema YavlGold · Transmisión Familiar</div>
+            <div class="sig-origin">Santa Ana del Valle · La Grita · Venezuela</div>
+          </div>
+
+          <div class="back-btn" id="closeCard">
+            <svg viewBox="0 0 24 24">
+              <polyline points="15 18 9 12 15 6"/>
+            </svg>
+            <span>Cerrar carta</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Countdown -->
+  <div class="countdown-section">
+    <div class="countdown-label">Cuenta regresiva para la misión</div>
+    <div class="countdown-grid" id="countdownGrid">
+      <div class="cd-block">
+        <div class="cd-value" id="cdDays">--</div>
+        <div class="cd-unit">Días</div>
+      </div>
+      <div class="cd-block">
+        <div class="cd-value" id="cdHours">--</div>
+        <div class="cd-unit">Horas</div>
+      </div>
+      <div class="cd-block">
+        <div class="cd-value" id="cdMins">--</div>
+        <div class="cd-unit">Minutos</div>
+      </div>
+      <div class="cd-block">
+        <div class="cd-value" id="cdSecs">--</div>
+        <div class="cd-unit">Segundos</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-text">System Initialized by: <span>Tío Yerikson</span> // <span>YavlGold</span></div>
+</footer>
+
+<script>
+(function() {
+  // ═══════ CLOCK ═══════
+  const clockTime = document.getElementById('clockTime');
+  const clockSeconds = document.getElementById('clockSeconds');
+  const clockDate = document.getElementById('clockDate');
+  const clockDay = document.getElementById('clockDay');
+  const secondHand = document.getElementById('secondHand');
+
+  const days = ['DOMINGO','LUNES','MARTES','MIÉRCOLES','JUEVES','VIERNES','SÁBADO'];
+  const months = ['ENE','FEB','MAR','ABR','MAY','JUN','JUL','AGO','SEP','OCT','NOV','DIC'];
+
+  function pad(n) { return n < 10 ? '0' + n : n; }
+
+  function updateClock() {
+    const now = new Date();
+    clockTime.textContent = pad(now.getHours()) + ':' + pad(now.getMinutes());
+    clockSeconds.textContent = ': ' + pad(now.getSeconds());
+    clockDate.textContent = pad(now.getDate()) + ' ' + months[now.getMonth()] + ' ' + now.getFullYear();
+    clockDay.textContent = days[now.getDay()];
+    const seconds = now.getSeconds() + now.getMilliseconds() / 1000;
+    secondHand.style.transform = 'translateX(-50%) rotate(' + ((seconds / 60) * 360) + 'deg)';
   }
-  </script>
 
-  <script>
-    // --- (INICIO) NO TOCAR DATA DE PRODUCTOS ---
-    const productos = [
-      {
-        id: "papa",
-        nombre: "Papa",
-        tipo: "hortaliza",
-        temporada: "Todo el año",
-        beneficios: ["Fuente de potasio", "Energía de liberación lenta"],
-        usos: ["Purés", "Hervida", "Al horno"],
-        img: "https://picsum.photos/seed/papa/640/420",
-        alt: "Papas frescas recién cosechadas"
-      },
-      {
-        id: "zanahoria",
-        nombre: "Zanahoria",
-        tipo: "hortaliza",
-        temporada: "Todo el año",
-        beneficios: ["Vitamina A", "Antioxidantes"],
-        usos: ["Ensaladas", "Sopas", "Jugos"],
-        img: "https://picsum.photos/seed/zanahoria/640/420",
-        alt: "Zanahorias naranjas con hojas verdes"
-      },
-      {
-        id: "cebollin",
-        nombre: "Cebollín",
-        tipo: "hortaliza",
-        temporada: "Todo el año",
-        beneficios: ["Vitamina K", "Sabor aromático"],
-        usos: ["Guarniciones", "Arepas", "Salteados"],
-        img: "https://picsum.photos/seed/cebollin/640/420",
-        alt: "Manojo de cebollín fresco"
-      },
-      {
-        id: "fresa",
-        nombre: "Fresa",
-        tipo: "fruta",
-        temporada: "Octubre–Mayo",
-        beneficios: ["Vitamina C", "Baja en calorías"],
-        usos: ["Batidos", "Postres", "Mermeladas"],
-        img: "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=800&auto=format&fit=crop",
-        alt: "Fresas rojas en canasta"
-      },
-      {
-        id: "mora",
-        nombre: "Mora",
-        tipo: "fruta",
-        temporada: "Junio–Noviembre",
-        beneficios: ["Antocianinas", "Fibra"],
-        usos: ["Jugos", "Salsas", "Helados"],
-        img: "https://images.unsplash.com/photo-1591780042342-df93d2e31c61?q=80&w=800&auto=format&fit=crop",
-        alt: "Moras frescas sobre hojas"
-      },
-      {
-        id: "aji",
-        nombre: "Ají",
-        tipo: "hortaliza",
-        temporada: "Todo el año",
-        beneficios: ["Vitamina C", "Capsaicina"],
-        usos: ["Salsas", "Encurtidos", "Guisos"],
-        img: "https://images.unsplash.com/photo-1615485737651-6e01cf4f1e46?q=80&w=800&auto=format&fit=crop",
-        alt: "Ajíes rojos y verdes"
-      }
-    ];
-    // --- (FIN) NO TOCAR DATA DE PRODUCTOS ---
+  updateClock();
+  setInterval(updateClock, 100);
 
-    const d = document;
-    const grid = d.getElementById("grid");
-    const chips = d.querySelectorAll(".chip");
+  // ═══════ DIAL MARKERS ═══════
+  const dialContainer = document.getElementById('dialMarkers');
+  for (let i = 0; i < 60; i++) {
+    const mark = document.createElement('div');
+    mark.className = 'dial-mark ' + (i % 5 === 0 ? 'major' : 'minor');
+    mark.style.transform = 'rotate(' + (i * 6) + 'deg)';
+    mark.style.setProperty('--face-r', '108px');
+    dialContainer.appendChild(mark);
+  }
 
-    function cardHTML(p){
-      const beneficios = p.beneficios.map(b => `<li>${b}</li>`).join("");
-      const usos = p.usos.join(" • ");
-      const wa = `https://wa.me/584247394025?text=${encodeURIComponent("Hola, quiero " + p.nombre + ". ¿Disponibilidad y precio?")}`;
-      return `
-      <article class="card" data-kind="${p.tipo}">
-        <img src="${p.img}" alt="${p.alt}" loading="lazy" width="640" height="420">
-        <div class="body">
-          <span class="badge">Temporada: ${p.temporada}</span>
-          <h3>${p.nombre}</h3>
-          <ul>${beneficios}</ul>
-          <p class="meta">Usos: ${usos}</p>
-        </div>
-        <div class="actions">
-          <a class="btn whats" href="${wa}" target="_blank" rel="noopener">Pedir</a>
-          <button class="btn ghost" aria-label="Guardar ${p.nombre}" data-save="${p.id}">Guardar</button>
-        </div>
-      </article>`;
+  // ═══════ BEZEL TICKS ═══════
+  const bezelContainer = document.getElementById('bezelTicks');
+  for (let i = 0; i < 120; i++) {
+    const tick = document.createElement('div');
+    tick.className = 'bezel-tick';
+    tick.style.setProperty('--watch-r', '170px');
+    tick.style.transform = 'rotate(' + (i * 3) + 'deg)';
+    tick.style.height = (i % 10 === 0 ? '10px' : '5px');
+    tick.style.opacity = (i % 10 === 0 ? '0.6' : '0.2');
+    bezelContainer.appendChild(tick);
+  }
+
+  // ═══════ PHRASES ═══════
+  const phrases = [
+    "La disciplina que forjas hoy en el Jáuregui es la misma fuerza que tu familia siempre vio en ti — incluso antes de que tú la descubrieras.",
+    "Un verdadero líder no nace el día que le dan el rango, nace el día que decide levantarse sin que nadie se lo ordene. Ese eres tú, Yoneiber.",
+    "La sangre de tu familia — de la tierra de Santa Ana — corre en tus venas como un juramento silencioso: serás inquebrantable, serás noble, serás leyenda."
+  ];
+
+  const romanNums = ['I', 'II', 'III'];
+  const phraseText = document.getElementById('phraseText');
+  const phraseNumber = document.getElementById('phraseNumber');
+  let currentPhrase = 0;
+
+  function showPhrase() {
+    phraseText.classList.remove('visible');
+    setTimeout(() => {
+      phraseNumber.textContent = 'Transmisión ' + romanNums[currentPhrase] + ' / III';
+      phraseText.textContent = '\u201C' + phrases[currentPhrase] + '\u201D';
+      phraseText.classList.add('visible');
+      currentPhrase = (currentPhrase + 1) % phrases.length;
+    }, 600);
+  }
+
+  setTimeout(() => {
+    showPhrase();
+    setInterval(showPhrase, 7000);
+  }, 3000);
+
+  // ═══════ PARTICLES ═══════
+  const particlesContainer = document.getElementById('particles');
+  for (let i = 0; i < 35; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.top = (60 + Math.random() * 50) + '%';
+    p.style.animationDuration = (8 + Math.random() * 15) + 's';
+    p.style.animationDelay = (Math.random() * 10) + 's';
+    const size = (1 + Math.random() * 2) + 'px';
+    p.style.width = size;
+    p.style.height = size;
+    particlesContainer.appendChild(p);
+  }
+
+  // ═══════ 3D LETTER CARD ═══════
+  const letterCard = document.getElementById('letterCard');
+  const closeCard = document.getElementById('closeCard');
+
+  letterCard.addEventListener('click', function(e) {
+    if (e.target.closest('#closeCard') || e.target.closest('.back-btn')) {
+      letterCard.classList.remove('flipped');
+      launchConfetti();
+      return;
+    }
+    if (!letterCard.classList.contains('flipped')) {
+      letterCard.classList.add('flipped');
+      launchConfetti();
+    }
+  });
+
+  closeCard.addEventListener('click', function(e) {
+    e.stopPropagation();
+    letterCard.classList.remove('flipped');
+  });
+
+  // ═══════ CONFETTI ═══════
+  function launchConfetti() {
+    const colors = ['#C8A752', '#E8D48B', '#8B6F2A', '#10B981', '#D4AF37', '#FFD700'];
+    for (let i = 0; i < 40; i++) {
+      const piece = document.createElement('div');
+      piece.className = 'confetti-piece';
+      piece.style.left = (10 + Math.random() * 80) + 'vw';
+      piece.style.top = '-10px';
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.width = (4 + Math.random() * 6) + 'px';
+      piece.style.height = (6 + Math.random() * 10) + 'px';
+      piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+      piece.style.animationDuration = (2.5 + Math.random() * 3) + 's';
+      piece.style.animationDelay = (Math.random() * 0.8) + 's';
+      document.body.appendChild(piece);
+      setTimeout(() => piece.remove(), 6000);
+    }
+  }
+
+  // ═══════ COUNTDOWN TO FEB 19, 2026 ═══════
+  const birthday = new Date(2026, 1, 19, 0, 0, 0); // Feb 19, 2026
+
+  function updateCountdown() {
+    const now = new Date();
+    let diff = birthday - now;
+
+    if (diff <= 0) {
+      // It's the birthday or past it
+      document.getElementById('cdDays').textContent = '🎉';
+      document.getElementById('cdHours').textContent = '🎉';
+      document.getElementById('cdMins').textContent = '🎉';
+      document.getElementById('cdSecs').textContent = '🎉';
+      document.querySelector('.countdown-label').textContent = '¡FELIZ CUMPLEAÑOS, CADETE YONEIBER!';
+      return;
     }
 
-    function render(filter = "all"){
-      grid.innerHTML = productos
-        .filter(p => filter === "all" ? true : p.tipo === filter)
-        .map(cardHTML)
-        .join("");
-      attachSave();
-      revealOnScroll();
-    }
+    const totalSecs = Math.floor(diff / 1000);
+    const d = Math.floor(totalSecs / 86400);
+    const h = Math.floor((totalSecs % 86400) / 3600);
+    const m = Math.floor((totalSecs % 3600) / 60);
+    const s = totalSecs % 60;
 
-    // Filtros
-    chips.forEach(chip => {
-      chip.addEventListener("click", () => {
-        chips.forEach(c => { c.classList.remove("is-active"); c.setAttribute("aria-selected","false"); });
-        chip.classList.add("is-active");
-        chip.setAttribute("aria-selected","true");
-        render(chip.dataset.filter);
-      });
-    });
+    document.getElementById('cdDays').textContent = pad(d);
+    document.getElementById('cdHours').textContent = pad(h);
+    document.getElementById('cdMins').textContent = pad(m);
+    document.getElementById('cdSecs').textContent = pad(s);
+  }
 
-    // Guardar en localStorage (simple)
-    function attachSave(){
-      d.querySelectorAll("[data-save]").forEach(btn => {
-        const id = btn.getAttribute("data-save");
-        const saved = JSON.parse(localStorage.getItem("saved") || "[]");
-        if (saved.includes(id)) btn.textContent = "Guardado ✓";
-        btn.addEventListener("click", () => {
-          let list = JSON.parse(localStorage.getItem("saved") || "[]");
-          if (!list.includes(id)) list.push(id);
-          localStorage.setItem("saved", JSON.stringify(list));
-          btn.textContent = "Guardado ✓";
-        });
-      });
-    }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 
-    // Animación al aparecer
-    function revealOnScroll(){
-      const cards = d.querySelectorAll(".card");
-      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      if (prefersReduced){
-        cards.forEach(c => c.classList.add("reveal"));
-        return;
-      }
-      const io = new IntersectionObserver(entries => {
-        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add("reveal"); io.unobserve(e.target); } });
-      }, {threshold: .12});
-      cards.forEach(c => io.observe(c));
-    }
+})();
+</script>
 
-    // Menú móvil
-    const navToggle = d.querySelector(".nav-toggle");
-    const menu = d.querySelector(".menu");
-    navToggle?.addEventListener("click", () => {
-      const open = menu.classList.toggle("open");
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-    });
-
-    // Tema claro/oscuro (Lógica OPUS)
-    const root = d.documentElement;
-    const themeBtn = d.getElementById("themeToggle");
-    function setTheme(t){ 
-        root.setAttribute("data-theme", t); 
-        localStorage.setItem("theme", t); 
-        themeBtn.textContent = t === "light" ? "☀️" : "🌙"; // Sol / Luna
-    }
-    const saved = localStorage.getItem("theme");
-    setTheme(saved || "dark"); // Default a Dark
-    themeBtn?.addEventListener("click", () => {
-      const t = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-      setTheme(t);
-    });
-
-    // Año en footer
-    d.getElementById("year").textContent = new Date().getFullYear();
-
-    // Inicial
-    render("all");
-  </script>
 </body>
 </html>
